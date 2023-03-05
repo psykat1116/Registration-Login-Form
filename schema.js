@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
 
 const formSchema = new mongoose.Schema({
   firstName: {
@@ -27,7 +28,7 @@ const formSchema = new mongoose.Schema({
   },
   mobile: {
     type: Number,
-    required: true
+    required: true,
   },
   age: {
     type: Number,
@@ -41,6 +42,15 @@ const formSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+});
+
+formSchema.pre("save", async function (next) {
+  if (this.isModified("password")) {
+    this.password = await bcrypt.hash(this.password, 10);
+    this.confirmPassword = await bcrypt.hash(this.confirmPassword, 10);
+    this.confirmPassword = undefined;
+  }
+  next();
 });
 
 const Register = new mongoose.model("Register", formSchema);

@@ -4,6 +4,7 @@ const mongoose = require("mongoose");
 const validator = require("validator");
 const bodyParser = require("body-parser");
 const hbs = require("hbs");
+const bcrypt = require("bcryptjs");
 const Register = require(__dirname + "/schema");
 const app = express();
 
@@ -42,6 +43,7 @@ app.get("/login", (req, res) => {
 
 app.post("/registration", async (req, res) => {
   try {
+    //encrypting the passwords
     const pass = req.body.password;
     const cpass = req.body.cpassword;
     if (pass !== cpass) {
@@ -56,31 +58,29 @@ app.post("/registration", async (req, res) => {
         sex: req.body.gender,
         mobile: req.body.mobile,
         age: req.body.age,
-        password: req.body.password,
-        confirmPassword: req.body.cpassword,
+        password: pass,
+        confirmPassword: cpass,
       });
       await newData.save();
       res.status(200).render("created");
     }
   } catch (error) {
-    res.status(400).send("**Email Already Exist Try Another");
+    res.status(400).send(error);
   }
 });
 
 app.post("/login", async (req, res) => {
   try {
     const email = req.body.email;
-    const pass = req.body.password;
+    pass = req.body.password;
     const getData = await Register.findOne({ email });
-    if (getData == null || getData.password !== pass) {
-      msg = "**Invalid Email or Password";
-      res.redirect("/login");
-    } else {
+    if (await bcrypt.compare(pass,getData.password)) {
       msg = "";
       res.status(200).render("success");
     }
   } catch (error) {
-    res.status(500).send(error);
+    msg = "**Invalid Login Details";
+    res.status(500).redirect("/login");
   }
 });
 
