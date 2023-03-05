@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Poppins&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: url(images/background.jpg);
+  background-size: cover;
+  background-position: center;
+  margin: auto;
+}
+
+navbar {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+navbar h1 {
+  padding-left: 5rem;
+  user-select: none;
+  cursor: pointer;
+}
+
+navbar h1 a {
+  text-decoration: none;
+  color: #fff;
+}
+
+navbar #links {
+  padding-right: 60px;
+}
+
+navbar #links ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  gap: 35px;
+}
+
+navbar #links ul li {
+  position: relative;
+  padding: 5px 0px;
+  /* background-color: red */
+  overflow: hidden;
+}
+
+navbar #links ul li::before {
+  content: "";
+  position: absolute;
+  height: 5%;
+  width: 100%;
+  bottom: 2px;
+  left: -100%;
+  background-color: #fff;
+  transition: 0.5s;
+}
+
+navbar #links ul li:hover::before {
+  left: 0px;
+}
+
+navbar #links ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.container {
+  position: absolute;
+  height: 70%;
+  width: 60%;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+}
+
+.container h1 {
+  width: 96%;
+  margin: 0px auto;
+  color: #162938;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #163928;
+}
+
+.container form {
+  margin:0px auto;
+  margin-top: 10px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: left last baseline;
+  width: 98%;
+}
+
+form .g1,
+.g2,
+.g3,
+.g4,
+.g5 {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: left;
+}
+
+.g1 .c1,
+.g1 .c2,
+.g2 .c3,
+.g3 .c5,
+.g3 .c6,
+.g4 .c7,
+.g4 .c8,
+.g2 .c4,
+.g5 button {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+.g2 .c4 span {
+  margin-left: 5px;
+  padding-top: 10px;
+}
+
+.g5 span {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form label {
+  margin-left: 0px;
+}
+
+form input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #163928;
+  padding: 5px;
+  font-size: 16px;
+  margin-left: 0px;
+}
+
+::placeholder {
+  color: #162938;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #162938;
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  text-align: center;
+  margin-right: auto;
+  margin-left: 10px;
+  cursor: pointer;
+  height: 35px;
+  max-width: 50%;
+}
+
+.g5 span {
+  max-width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.login {
+  position: absolute;
+  height: 60%;
+  width: 25%;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  padding: 15px;
+  color: #162938;
+}
+
+.login h1 {
+  border-bottom: 3px solid #162938;
+  width: 98%;
+  margin: 0px auto;
+  /* background-color: red; */
+}
+
+.login form {
+  position: relative;
+  height: 100%;
+  margin: 0px auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: red; */
+  width: 98%;
+}
+
+.login form .g1,
+.login form .g2 {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.login label {
+  position: relative;
+  font-size: 20px;
+  margin-left: 0px;
+}
+
+.login input {
+  margin-left: 0px;
+}
+
+.login button {
+  position: relative;
+  min-width: 100%;
+  margin: 0px auto;
+}
+
+.login span {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.login p,.container p {
+  position: relative;
+  font-size: 16px;
+  color: red;
+}
+
+.container p{
+    padding-left: 10px;
+}
+
+#show {
+  position: absolute;
+  left: 45%;
+  top: 60%;
+}
+
+#left-show {
+  position: absolute;
+  right: 2%;
+  top: 60%;
+}
+
+.fa-solid {
+  cursor: pointer;
+}
+
+.box{
+  position: absolute;
+  width:80%;
+  height: 50vh;
+  background-color: rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.box h4{
+  font-family: 'Dancing Script', cursive;
+  width: 90%;
+  margin: 0px auto;
+  text-align: right;
+  letter-spacing: 1px;
+  font-size: 20px;
+}
+
+.complete{
+  position: absolute;
+  min-height: 50%;
+  width: 50%;
+  /* background-color: #000; */
+  /* border: 2px solid rgba(255, 255, 255, 0.5); */
+  /* backdrop-filter: blur(10px); */
+  border-radius: 10px;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.complete h1{
+  position: relative;
+  width: 100%;
+  font-size: 10rem;
+  background-color: #000;
+  color: #fff;
+  margin: 0px auto;
+  letter-spacing: 10px;
+  user-select: none;
+  mix-blend-mode: multiply;
+  text-align: center;
+  box-shadow: 2px 2px 10px #000;
+  border-radius: 10px;
+  opacity: 0.9;
+}
+
+.complete h1 p{
+  font-size: 20px;
+  letter-spacing: 0px;
+  padding-bottom: 20px;
+}
+
+#fail{
+  font-size: 16px;
+  padding: 0px 10px;
+  padding-bottom: 30px;
+}
+
+#create{
+  font-size: 16px;
+  padding: 0px 10px;
+  padding-bottom: 30px;
+}
+
+footer {
+  position: relative;
+  /* bottom: 0px; */
+  margin-top: auto;
+  height: 6vh;
+  width:100%;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 25px 0 0 0;
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  text-align: center;
+  color: #fff;
+}
