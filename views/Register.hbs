@@ -1,0 +1,62 @@
+{{>navbar}}
+<div class="container">
+    <h1>Registration</h1>
+    <form method="post" action="/registration">
+        <div class="g1">
+            <div class="c1">
+                <label>First Name</label>
+                <input type="text" placeholder="John" name="fname" autofocus autocomplete="off" required>
+            </div>
+            <div class="c2">
+                <label>Last Name</label>
+                <input type="text" placeholder="Doe" name="lname" autocomplete="off" required>
+            </div>
+        </div>
+        <div class="g2">
+            <div class="c3">
+                <label>Email</label>
+                <input type="text" placeholder="john@doe.com" name="email" autocomplete="off" required>
+            </div>
+            <div class="c4">
+                <label>Gender</label>
+                <span>
+                    <input type="radio" id="male" name="gender" value="Male" checked>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female">Female</label>
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other">Others</label>
+                </span>
+            </div>
+        </div>
+        <div class="g3">
+            <div class="c5">
+                <label>Mobile No</label>
+                <input type="number" placeholder="7891065102" name="mobile" autocomplete="off" required>
+            </div>
+            <div class="c6">
+                <label>Age</label>
+                <input type="number" placeholder="22" name="age" autocomplete="off" required>
+            </div>
+        </div>
+        <div class="g4">
+            <div class="c7">
+                <label>Password</label>
+                <input type="password" placeholder="#~!123John" name="password" autocomplete="off" id="pass" required>
+                <i class="fa-solid fa-eye-slash" id="show" onclick="changePass()"></i>
+            </div>
+            <div class="c8">
+                <label>Confirm Password</label>
+                <input type="password" placeholder="#~!123John" name="cpassword" autocomplete="off" required>
+            </div>
+        </div>
+        <p>{{errormsg}}</p>
+        <div class="g5">
+            <button type="submit">Register</button>
+            <span
+                >Already have a Account.<a href="/login">Login</a></span
+            >
+        </div>
+    </form>
+</div>
+{{>footer}}
