@@ -1,35 +1,19 @@
 {{>navbar}}
-    <div class="login">
-      <h1>Login</h1>
-      <form method="post" action="/login">
-        <div class="g1">
-          <label>Email</label>
-          <input
-            type="email"
-            placeholder="john@doe.com"
-            name="email"
-            required
-            autocomplete="off"
-            autofocus
-          />
-        </div>
-        <div class="g2">
-          <label>Password</label>
-          <input
-            type="password"
-            placeholder=". . . . . . . . . ."
-            name="password"
-            required
-            autocomplete="off"
-            id="pass1"
-          />
-          <i class="fa-solid fa-eye-slash" id="left-show" onclick="change()"></i>
-        </div>
-        <p>{{errormsg}}</p>
-        <button type="submit" name="submit">Login</button>
-        <span
-          >Don't have any Account. <a href="/registration">Register</a></span
-        >
-      </form>
+<div class="login">
+  <h1>Login</h1>
+  <form method="post" action="/login">
+    <div class="g1">
+      <label>Email</label>
+      <input type="email" placeholder="john@doe.com" name="email" required autocomplete="off" autofocus />
     </div>
+    <div class="g2">
+      <label>Password</label>
+      <input type="password" placeholder=". . . . . . . . . ." name="password" required autocomplete="off" id="pass1" />
+      <i class="fa-solid fa-eye-slash" id="left-show" onclick="change()"></i>
+    </div>
+    <p>{{errormsg}}</p>
+    <button type="submit" name="submit">Login</button>
+    <span>Don't have any Account. <a href="/registration">Register</a></span>
+  </form>
+</div>
 {{>footer}}

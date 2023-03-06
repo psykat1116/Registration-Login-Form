@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Dancing+Script&family=Poppins&display=swap");
 
 * {
   margin: 0;
@@ -81,7 +81,7 @@ navbar #links ul li a {
 
 .container {
   position: absolute;
-  height: 70%;
+  height: auto;
   width: 60%;
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
@@ -102,7 +102,7 @@ navbar #links ul li a {
 }
 
 .container form {
-  margin:0px auto;
+  margin: 0px auto;
   margin-top: 10px;
   height: 100%;
   display: flex;
@@ -122,6 +122,7 @@ form .g1,
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: left;
+  padding: 10px 0;
 }
 
 .g1 .c1,
@@ -149,6 +150,10 @@ form .g1,
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.g5 span a {
+  padding-left: 5px;
 }
 
 form label {
@@ -232,23 +237,29 @@ button {
 }
 
 .login form .g1,
-.login form .g2 {
+.login form .g2,
+.logout form .g1,
+.logout form .g2 {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-.login label {
+.login label,
+.logout label {
   position: relative;
   font-size: 20px;
   margin-left: 0px;
 }
 
-.login input {
+.login input,
+.logout input {
   margin-left: 0px;
+  width: 100%;
 }
 
-.login button {
+.login button,
+.logout button {
   position: relative;
   min-width: 100%;
   margin: 0px auto;
@@ -259,14 +270,15 @@ button {
   text-align: center;
 }
 
-.login p,.container p {
+.login p,
+.container p {
   position: relative;
   font-size: 16px;
   color: red;
 }
 
-.container p{
-    padding-left: 10px;
+.container p {
+  padding-left: 10px;
 }
 
 #show {
@@ -281,14 +293,18 @@ button {
   top: 60%;
 }
 
+.logout #left-show {
+  top: 35%;
+}
+
 .fa-solid {
   cursor: pointer;
 }
 
-.box{
+.box {
   position: absolute;
-  width:80%;
-  height: 50vh;
+  width: 80%;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: space-evenly;
@@ -299,8 +315,8 @@ button {
   backdrop-filter: blur(10px);
 }
 
-.box h4{
-  font-family: 'Dancing Script', cursive;
+.box h4 {
+  font-family: "Dancing Script", cursive;
   width: 90%;
   margin: 0px auto;
   text-align: right;
@@ -308,7 +324,7 @@ button {
   font-size: 20px;
 }
 
-.complete{
+.complete {
   position: absolute;
   min-height: 50%;
   width: 50%;
@@ -317,12 +333,12 @@ button {
   /* backdrop-filter: blur(10px); */
   border-radius: 10px;
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.complete h1{
+.complete h1 {
   position: relative;
   width: 100%;
   font-size: 10rem;
@@ -338,22 +354,47 @@ button {
   opacity: 0.9;
 }
 
-.complete h1 p{
+.complete h1 p {
   font-size: 20px;
   letter-spacing: 0px;
   padding-bottom: 20px;
 }
 
-#fail{
+#fail {
   font-size: 16px;
   padding: 0px 10px;
   padding-bottom: 30px;
 }
 
-#create{
+#create {
   font-size: 16px;
   padding: 0px 10px;
   padding-bottom: 30px;
+}
+
+.logout {
+  position: absolute;
+  height: auto;
+  width: 25%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: left;
+  margin: 0px auto;
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+}
+
+.logout p {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.logout button {
+  margin-top: 20px;
 }
 
 footer {
@@ -361,7 +402,7 @@ footer {
   /* bottom: 0px; */
   margin-top: auto;
   height: 6vh;
-  width:100%;
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 25px 0 0 0;
   backdrop-filter: blur(10px);
