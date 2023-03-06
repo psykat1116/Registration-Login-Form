@@ -1,4 +1,5 @@
 //Requireing the packages
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const validator = require("validator");
@@ -61,6 +62,10 @@ app.post("/registration", async (req, res) => {
         password: pass,
         confirmPassword: cpass,
       });
+
+      //Storing the JWT token value after generating as a middleware
+      const token = await newData.generateAuthToken();
+
       await newData.save();
       res.status(200).render("created");
     }
@@ -74,6 +79,11 @@ app.post("/login", async (req, res) => {
     const email = req.body.email;
     pass = req.body.password;
     const getData = await Register.findOne({ email });
+
+    //Storing the JWT token value after generating as a middleware
+    const token = await getData.generateAuthToken();
+
+    //Using bcrypt compare mathod to check that the password is matched or not
     if (await bcrypt.compare(pass,getData.password)) {
       msg = "";
       res.status(200).render("success");
