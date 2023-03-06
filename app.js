@@ -72,8 +72,8 @@ app.post("/logout", auth, async (req, res) => {
     //   return (ele = req.token);
     // });
 
-    //For logout from all devices
-    // req.user.tokens=[];
+    // For logout from all devices
+    req.user.tokens=[];
 
     res.clearCookie("jwt");
     await req.user.save();
